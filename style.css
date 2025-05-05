@@ -1,6 +1,10 @@
-/* Body */
+/* Apply background image with fallback color */
 body{
     background-color: white;
+    background-image: url('bgimage.jpg');
+    background-size: cover;        /* Cover full screen */
+    background-repeat: no-repeat;  /* No repeating */
+    background-position: center;   /* Center the image */
 }
 
 /* Navigation Bar */
@@ -19,6 +23,8 @@ nav{
    color: aliceblue;
    font-weight: bold;
    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0 0 15px #000;
    
 }
 
@@ -39,6 +45,8 @@ nav a {
     color: aliceblue;
     font-weight: bold;
     padding: 5px 10px;
+    font-weight: bold;
+    text-shadow: 0 0 10px pink;
   
 }
 nav a:hover {
@@ -48,11 +56,12 @@ nav a:hover {
 }
 
 
+
 img.pp{
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
     float: right;
-    border-radius: 50%; 
+    border-radius: 70%; 
     object-fit: cover;
     margin-bottom: 20px;
     margin: 10px 150px;
@@ -65,79 +74,72 @@ img.pp:hover {
 
 h1{
     font-size: 60px;
-    color: gray;
     font-family: Arial;
+    color: gray;
+    
 }
 .p1{
     font-size: 22px;
     color: gray;
     font-family: Arial;
+    text-shadow: 0 0 10px gray;
 }
-.website-container {
+/* About Page Layout */
+.about-container {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 20px;
+    padding: 40px;
+    justify-content: center;
 }
 
-.left-column{
-    flex: 1;
-
-  }
-.right-column {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    height: 90%;
-    margin-top: 20px;
-    padding-top: 10px;
-  }
-
-.leftside{
-    width: 80%;
-    text-align: left;
-    background-color: gray;
-    padding: 50px;
-    font-size: 23px;
-    font-family: Arial;
-    color: aliceblue;
- 
+/* Common box styling */
+.about-box {
+    flex: 1 1 45%;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.3s ease;
+    min-width: 280px;
 }
 
-.rightside{
-    width: 80%;
-    text-align: left;
-    background-color: gray;
-    padding: 50px;
-    font-size: 23px;
-    font-family: Arial;
-    color: aliceblue;
-    height: 120px;
+/* Individual box colors */
+.box1 { background-color: gray; }  
+.box2 { background-color: gray; } 
+.box3 { background-color: gray; }  
+.box4 { background-color: gray; }  
+
+/* Hover animation */
+.about-box:hover {
+    transform: scale(1.05);
 }
 
-.leftside2{
-    width: 60%;
-    text-align: center;
-    background-color: gray;
-    padding: 30px;
-    font-size: 23px;
-    font-family: Arial;
+/* Text styling */
+.about-box p {
+    font-size: 18px;
     color: aliceblue;
-    height: 170px;
-    position: relative;
-    margin-top: 0;
-    padding-top: 0;
+    line-height: 1.6;
+    font-family: Arial;
+}
+
    
-}
+
 .head{
     font-size: 30px;
     font-weight: bold;
 }
 .introoo{
     color: darkblue;
+    font-weight: bold;
+    text-shadow: 0 0 10px pink;
+    animation: fadeIn 1.2s ease-in-out both;
+    
 }
+/* keyframes  */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
 .rightside2{
     width: 60%;
@@ -156,8 +158,8 @@ h1{
 .right-column2 {
     flex: 1;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
+    justify-content: center; 
+    align-items: center;     
     height: 90%;
     margin-top: 20px;
     padding-top: 10px;
@@ -165,18 +167,107 @@ h1{
 .call{
     color: gray;
     font-family: Arial;
-    font-size: 50px;
-    display: flex;
-    text-align: center;
+    font-size: 55px;
+    text-align: center;        
+    margin: 0 auto;            
+    display: block;
     
 }
-.ppp{
-    color: darkblue;
-    font-size: 23px;
-    font-weight: bold;
-    font-family: Arial;
+.contactme{
+    width: 100%;
+    text-align: center;
+    padding: 40px;
 }
+
 .contactme{
   text-align: center;
     
 }
+
+.social-links {
+    margin-top: 35px;
+}
+
+.social-links a {
+    font-size: 25px;
+    color: darkblue;
+    text-decoration: none;
+    margin: 0 25px;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 10px pink;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    background-color: gray;
+    color: aliceblue;
+    border-radius: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    .nav-left {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    img.pp {
+        width: 250px;
+        height: 250px;
+        float: none;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .p1 {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about-box {
+        width: 100%;
+    }
+
+    .call {
+        font-size: 27px;
+        padding: 0 10px;
+        
+    }
+
+    .social-links a {
+        font-size: 20px;
+        margin: 0 5px;
+    }
+}
+
