@@ -135,6 +135,27 @@ h1{
     animation: fadeIn 1.2s ease-in-out both;
     
 }
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: gray; /* optional background */
+    text-align: center;
+    padding: 10px 0; /* optional padding */
+}
+
+.footer-container {
+    width: 100%;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 15px;
+    color: aliceblue;
+    text-shadow: 0 0 10px pink;
+}
 /* keyframes  */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(30px); }
